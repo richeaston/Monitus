@@ -86,7 +86,7 @@
 
         <div class="row">
 			<div class="col-lg-12">
-            <h1>Services Dashboard <small>Settings Page</small></h1>
+            <h1><small>Settings Page</small></h1>
             <ol class="breadcrumb">
               <li><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
               <li class="active"><i class="icon-cog"></i> Settings</li>

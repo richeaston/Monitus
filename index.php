@@ -145,7 +145,7 @@
 					}		
 					}
 					$total = ($sonline + $soffline);
-					$smeh = round(($soffline / $sonline * 100) , 0);
+					$smeh = round(($soffline / ($sonline+$soffline) * 100) , 0);
 					$p = (100 - $smeh);
 					?>
 						<tr><td colspan="2"><h4>Servers Online: <span class="label label-primary"><?php echo $sonline; ?></span> of <span class="label label-primary"><?php echo $total; ?></span></h4></td></tr>
@@ -217,7 +217,7 @@
 					}
 					}		
 					}
-					$wmeh = round(($woffline / $wonline * 100 ) , 0);
+					$wmeh = round(($woffline / ($wonline+$woffline) * 100 ) , 0);
 					$w = (100 - $wmeh);
 					
 					fclose($handle);
@@ -284,7 +284,7 @@
 					}
 					}		
 					}
-					$qmeh = round(($qoffline / $qonline * 100) , 0);
+					$qmeh = round(($qoffline / ($qonline+$qoffline) * 100) , 0);
 					$q = (100 - $qmeh);
 					
 					fclose($handle);
