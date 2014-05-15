@@ -65,7 +65,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="dashboard.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
+          <a class="navbar-brand" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
