@@ -8,11 +8,13 @@
     <meta name="author" content="Richard Easton 2014">
 	<meta http-equiv="refresh" content="120">
 
-    <title>Services Dashboard</title>
+    <title>Monitus Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 
     <!-- Add custom CSS here -->
     <link href="css/sb-admin.css" rel="stylesheet">
