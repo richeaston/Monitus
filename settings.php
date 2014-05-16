@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="dashboard.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
+          <a class="navbar-brand" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -126,7 +126,7 @@
 							<td><?php echo $line[1]; ?></td>
 							<td><?php echo $line[2]; ?></td>
 							<td><?php if ($line[3] != "Quiet") { echo $line[3]; } else { ?><span class="label label-danger"><i class="icon-microphone-off"></i> <?php echo $line[3]; ?></span><?php } ?></td>
-							<td><a href="remove-server.php?s=<?php echo $line[0];?>" title="Remove <?php echo $line[0];?>"><i class="icon-trash"></i></a> | <?php if ($line[3] != "Quiet") { ?><a href="#" title="Mute Alerts"><i class="icon-microphone-off"></i></a><?php } else { ?><a href="#" title="Enable Alerts"><i class="icon-microphone"></i></a><?php } ?></td>
+							<td><a href="remove-device.php?t=servers&s=<?php echo $line[0];?>" title="Remove <?php echo $line[0];?>"><i class="icon-trash"></i></a> | <?php if ($line[3] != "Quiet") { ?><a href="edit-device.php?t=servers&n=<?php echo $line[0]; ?>&i=<?php echo $line[1]; ?>&p=<?php echo $line[2]; ?>&a=<?php echo $line[3]; ?>" title="Mute Alerts"><i class="icon-microphone-off"></i></a><?php } else { ?><a href="edit-device.php?t=servers&n=<?php echo $line[0]; ?>&i=<?php echo $line[1]; ?>&p=<?php echo $line[2]; ?>&a=<?php echo $line[3]; ?>" title="Enable Alerts"><i class="icon-microphone"></i></a><?php } ?></td>
 						</tr>
 					<?php
 					$c++;
@@ -167,7 +167,7 @@
 							<td><?php echo $line[1]; ?></td>
 							<td><?php echo $line[2]; ?></td>
 							<td><?php if ($line[3] != "Quiet") { echo $line[3]; } else { ?><span class="label label-danger"><i class="icon-microphone-off"></i> <?php echo $line[3]; ?></span><?php } ?></td>
-							<td><a href="remove-website.php?s=<?php echo $line[0];?>" title="Remove <?php echo $line[0];?>"><i class="icon-trash"></i></a> | <?php if ($line[3] != "Quiet") { ?><a href="#" title="Mute Alerts"><i class="icon-microphone-off"></i></a><?php } else { ?><a href="#" title="Enable Alerts"><i class="icon-microphone"></i></a><?php } ?></td>
+							<td><a href="remove-device.php?t=websites&s=<?php echo $line[0];?>" title="Remove <?php echo $line[0];?>"><i class="icon-trash"></i></a> | <?php if ($line[3] != "Quiet") { ?><a href="edit-device.php?t=websites&n=<?php echo $line[0]; ?>&i=<?php echo $line[1]; ?>&p=<?php echo $line[2]; ?>&a=<?php echo $line[3]; ?>" title="Mute Alerts"><i class="icon-microphone-off"></i></a><?php } else { ?><a href="edit-device.php?t=websites&n=<?php echo $line[0]; ?>&i=<?php echo $line[1]; ?>&p=<?php echo $line[2]; ?>&a=<?php echo $line[3]; ?>" title="Enable Alerts"><i class="icon-microphone"></i></a><?php } ?></td>
 						</tr>
 					<?php
 					$c++;
@@ -205,7 +205,7 @@
 							<td><?php echo $line[1]; ?></td>
 							<td><?php echo $line[2]; ?></td>
 							<td><?php if ($line[3] != "Quiet") { echo $line[3]; } else { ?><span class="label label-danger"><i class="icon-microphone-off"></i> <?php echo $line[3]; ?></span><?php } ?></td>
-							<td><a href="remove-storage.php?s=<?php echo $line[0];?>" title="Remove <?php echo $line[0];?>"><i class="icon-trash"></i></a> | <?php if ($line[3] != "Quiet") { ?><a href="#" title="Mute Alerts"><i class="icon-microphone-off"></i></a><?php } else { ?><a href="#" title="Enable Alerts"><i class="icon-microphone"></i></a><?php } ?></td>
+							<td><a href="remove-device.php?t=storage&s=<?php echo $line[0];?>" title="Remove <?php echo $line[0];?>"><i class="icon-trash"></i></a> | <?php if ($line[3] != "Quiet") { ?><a href="edit-device.php?t=storage&n=<?php echo $line[0]; ?>&i=<?php echo $line[1]; ?>&p=<?php echo $line[2]; ?>&a=<?php echo $line[3]; ?>" title="Mute Alerts"><i class="icon-microphone-off"></i></a><?php } else { ?><a href="edit-device.php?t=storage&n=<?php echo $line[0]; ?>&i=<?php echo $line[1]; ?>&p=<?php echo $line[2]; ?>&a=<?php echo $line[3]; ?>" title="Enable Alerts"><i class="icon-microphone"></i></a><?php } ?></td>
 						</tr>
 					<?php
 					$c++;

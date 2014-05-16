@@ -1,6 +1,7 @@
 <?php
+	$type = $_GET['t'];
 	$item = $_GET['s'];
-	$file = './websites.csv';
+	$file = './' . $type . '.csv';
 	$lines = file($file);
     $pattern = '/' . $item. '/im';
 	$rows=array();

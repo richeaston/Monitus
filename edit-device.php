@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Monitus Dashboard</title>
+    <title>Services Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -17,7 +17,13 @@
   </head>
 
   <body>
-
+<?php
+$type = $_GET['t'];
+$name = $_GET['n'];
+$ipaddress = $_GET['i'];
+$port = $_GET['p'];
+$alert = $_GET['a'];
+?>
     <div id="wrapper">
 
       <!-- Sidebar -->
@@ -72,7 +78,8 @@
 			<li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> Tasks <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="add-device.php"><i class="icon-desktop"></i> Add Server</a></li>
+                <li><a href="add-server.php"><i class="icon-desktop"></i> Add Server</a></li>
+                <li><a href="#"><i class="icon-globe"></i> Add Website</a></li>
                 <li><a href="#"><i class="icon-hdd"></i> Add Storage</a></li>
                 <li class="divider"></li>
                 <!--<li><a href="#"><i class="icon-power-off"></i> Log Out</a></li>-->
@@ -95,31 +102,33 @@
           </div>
         <!-- end of breadcrumbs -->
 		
-		<form class="" action="write-device.php" method="post">
+		<form class="" action="write-edit.php" method="post">
 			<div class="col-lg-4">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="icon-desktop"></i> New Device Details</h3>
+                <h3 class="panel-title"><i class="icon-pencil"></i> Edit Device Details</h3>
               </div>
               <div class="panel-body">
               <div class="form-group input-group">
                 <span class="input-group-addon"><i class="icon-magic"></i> Device Type</span>
                 <select type="text" class="form-control" id="type" name="type" placeholder="Type">
+                  <option><?php echo $type; ?></option>
                   <option>servers</option>
                   <option>websites</option>
                   <option>storage</option>
                 </select>
               </div><div class="form-group input-group">
                 <span class="input-group-addon"><i class="icon-desktop"></i> Name</span>
-                <input type="text" class="form-control" id="servername" name="servername" placeholder="Name">
+                <input type="text" class="form-control" id="servername" name="servername" placeholder="Name" value="<?php echo $name; ?>">
               </div>
 			  <div class="form-group input-group">
                 <span class="input-group-addon"><i class="icon-sitemap"></i> Address</span>
-                <input type="text" class="form-control" id="ipaddress" name="ipaddress" placeholder="Address">
+                <input type="text" class="form-control" id="ipaddress" name="ipaddress" placeholder="Address" value="<?php echo $ipaddress; ?>">
               </div>
 			  <div class="form-group input-group">
                 <span class="input-group-addon"><i class="icon-bolt"></i> Port</span>
                 <select type="text" class="form-control" id="port" name="port" placeholder="Port">
+                  <option><?php echo $port; ?></option>
                   <option>139</option>
                   <option>1080</option>
                   <option>21</option>
@@ -132,13 +141,20 @@
 			  <div class="form-group input-group">
                 <span class="input-group-addon"><i class="icon-bell-alt"></i> Alerts</span>
                 <select type="text" class="form-control" id="alerts" name="alerts" placeholder="Alerts">
-                  <option>Normal</option>
+                <?php 
+				if ($alert != "Quiet") {
+				?>
+				  <option>Normal</option>
                   <option>Quiet</option>
-                </select>
+                <?php } else { ?>
+				  <option>Quiet</option>
+                  <option>Normal</option>
+                <?php }	?>
+				</select>
               </div>
 			  
-			  <button type="submit" class="btn btn-primary">Submit</button>
-			  <button type="reset" class="btn btn-default">Reset</button>
+			  <button type="submit" class="btn btn-primary">Update Details</button>
+			  <button type="cancel" class="btn btn-default">cancel</button>
 			  </div>
             </div>
           </div>
