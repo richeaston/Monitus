@@ -1,9 +1,9 @@
 <?php
-	$type = $_POST['t'];
-	$name = $_POST['n'];
-	$ipaddress = $_POST['i'];
-	$port = $_POST['p'];
-	$alert = $_POST['a'];
+	$type = $_POST['type'];
+	$name = $_POST['servername'];
+	$ipaddress = $_POST['ipaddress'];
+	$port = $_POST['port'];
+	$alert = $_POST['alerts'];
 	$file = $type . '.csv';
 	$lines = file($file);
     $pattern = '/' . $name . '/im';
@@ -16,8 +16,8 @@ foreach ($lines as $key => $value) {
 		fwrite($gfp, $value );
 	}
 }
+fwrite($gfp, "\n" . $name . "," . $ipaddress . "," . $port . "," . $alert);
 fclose($gfp);
 
-file_put_contents($type . '.csv', $name . "," . $ipaddress . "," . $port . "," . $alert . "\n", FILE_APPEND | LOCK_EX);
 header( 'Location: settings.php' ) ;
 ?>
