@@ -93,7 +93,7 @@
             <h1><small>Assets Page</small></h1>
             <ol class="breadcrumb">
               <li><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
-              <li class="active"><i class="icon-cog"></i> Assets</li>
+              <li class="active"><i class="icon-desktop"></i> Assets</li>
             </ol>
 			<a href="add-device.php" class="btn btn-primary"><i class="icon-plus"></i> Add new asset</a>&nbsp;
 			<a href="remove-log.php" class="btn btn-danger"><i class="icon-trash"></i> Clear Alert Log</a>
