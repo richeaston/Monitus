@@ -72,6 +72,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li class="active"><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
+            <li><a href="assets.php"><i class="icon-desktop"></i> Assets</a></li>
             <li><a href="settings.php"><i class="icon-gear"></i> Settings</a></li>
           </ul>
 
@@ -79,6 +80,7 @@
              <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> Menu <b class="caret"></b></a>
               <ul class="dropdown-menu">
+                 <li><a href="assets.php"><i class="icon-desktop"></i> Assets</a></li>
                  <li><a href="settings.php"><i class="icon-gear"></i> Settings</a></li>
               </ul>
             </li>

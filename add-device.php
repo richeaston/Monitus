@@ -37,6 +37,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
+            <li><a href="assets.php"><i class="icon-desktop"></i> Assets</a></li>
             <li class="active"><a href="settings.php"><i class="icon-gear"></i> Settings</a></li>
            </ul>
 
@@ -86,11 +87,11 @@
 
         <div class="row">
           <div class="col-lg-12">
-            <h1><small>Add New Device / Website / Storage</small></h1>
+            <h1><small>Add New Asset / Website / Storage</small></h1>
             <ol class="breadcrumb">
               <li><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
 			  <li><a href="settings.php"><i class="icon-cog"></i> Settings</a></li>
-			  <li class="active"><i class="icon-plus"></i> <i class="icon-desktop"></i> Add New Device</li>
+			  <li class="active"><i class="icon-plus"></i> <i class="icon-desktop"></i> Add New Asset</li>
             </ol>
           </div>
         <!-- end of breadcrumbs -->
@@ -99,11 +100,11 @@
 			<div class="col-lg-4">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="icon-desktop"></i> New Device Details</h3>
+                <h3 class="panel-title"><i class="icon-desktop"></i> New Asset Details</h3>
               </div>
               <div class="panel-body">
               <div class="form-group input-group">
-                <span class="input-group-addon"><i class="icon-magic"></i> Device Type</span>
+                <span class="input-group-addon"><i class="icon-magic"></i> Asset Type</span>
                 <select type="text" class="form-control" id="type" name="type" placeholder="Type">
                   <option>servers</option>
                   <option>websites</option>

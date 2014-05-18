@@ -40,8 +40,8 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
-            <li><a href="assets.php"><i class="icon-gear"></i> Assets</a></li>
-            <li class="active"><a href="settings.php"><i class="icon-gear"></i> Settings</a></li>
+            <li class="active"><a href="assets.php"><i class="icon-desktop"></i> Assets</a></li>
+            <li><a href="settings.php"><i class="icon-gear"></i> Settings</a></li>
            </ul>
 
           <ul class="nav navbar-nav navbar-right navbar-user">
