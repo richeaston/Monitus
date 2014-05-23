@@ -1,0 +1,14 @@
+//lets say you need line 4
+$myLine = 4 ; 
+$file = new SplFileObject('bigFile.txt');
+//this is zero based so need to subtract 1
+$file->seek($myLine-1);
+//now print the line
+echo $file->current();
+
+<?php
+$filename = getcwd() . "/stats/stats.txt";
+$line_i_am_looking_for = 123;
+$lines = file( $filename , FILE_IGNORE_NEW_LINES );
+$lines[$line_i_am_looking_for] = 'my modified line';
+file_put_contents( $filename , implode( "\n", $lines ) );

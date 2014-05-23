@@ -1,3 +1,9 @@
 .row-valign {
 vertical-align: top;
 }
+
+.logofont {
+font-family: 'Oleo Script', cursive;
+color: whitesmoke !important;
+font-size: 28px !important;
+}

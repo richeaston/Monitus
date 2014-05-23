@@ -13,7 +13,9 @@
 
     <!-- Add custom CSS here -->
     <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 	<link rel="icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 
@@ -33,7 +35,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
+          <a class="navbar-brand logofont" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -77,7 +79,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> Tasks <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="add-device.php"><i class="icon-desktop"></i> Add Asset</a></li>
-                <li><a href="remove-log.php"><i class="icon-trash"></i> Delete Error Log</a></li>
+                <li><a href="remove-log.php"><i class="icon-trash"></i> Clear Alert Log</a></li>
                 <li class="divider"></li>
                 <!--<li><a href="#"><i class="icon-power-off"></i> Log Out</a></li>-->
               </ul>

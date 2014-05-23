@@ -17,7 +17,8 @@
 	<link rel="icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 
     <!-- Add custom CSS here -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+	<link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   </head>
 
@@ -32,11 +33,11 @@
 	}
 	if (file_exists($websites)) {
 	} else {
-	file_put_contents($websites, "google.co.uk,google.co.uk,80,Normal\n");
+	file_put_contents($websites, "SelloString.co.uk,SelloString.co.uk,80,Normal\n");
 	}
 	if (file_exists($storage)) {
 	} else {
-	file_put_contents($storage, "google.co.uk,google.co.uk,80,Normal\n");
+	file_put_contents($storage, "Sellostring.com,Sellostring.com,80,Normal\n");
 	}
 ?>
   
@@ -50,7 +51,7 @@
 		}
 	} else {
 	$date = date('d-m-Y H:i:s');
-	file_put_contents($file, $date . ",Log File Created,New error log created.\n");
+	file_put_contents($file, $date . ",Alert Log Created,Alert Log not found! Created one.\n");
 	}
 ?>
     <div id="wrapper">
@@ -65,7 +66,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
+          <a class="navbar-brand logofont" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
