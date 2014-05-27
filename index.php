@@ -72,17 +72,17 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
-            <li><a href="assets.php"><i class="icon-desktop"></i> Assets</a></li>
-            <li><a href="settings.php"><i class="icon-gear"></i> Settings</a></li>
+            <li class="active"><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
+            <li><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
+            <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right navbar-user">
              <li class="dropdown user-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> Menu <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/brick.png"> Menu <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                 <li><a href="assets.php"><i class="icon-desktop"></i> Assets</a></li>
-                 <li><a href="settings.php"><i class="icon-gear"></i> Settings</a></li>
+                 <li><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
+                 <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
               </ul>
             </li>
           </ul>
@@ -119,15 +119,15 @@
 						if ($result != "online") {
 					?>	
 						<tr>
-							<td><strong><i class="icon-desktop"></i> <a href="#" title="<?php echo $line[1]; ?>"><?php echo $line[0];?></a></strong></td>
+							<td><strong><img src="images/server.png"> <a href="#" title="<?php echo $line[1]; ?>"><?php echo $line[0];?></a></strong></td>
 							<?php
 							if ($line[3] != "Quiet") {
 							?>
-							<td><span class="label label-danger"><i class="icon-warning-sign"></i> <?php echo $result; ?></span>
+							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?></span>
 							<?php
 							} else {
 							?>
-							<td><span class="label label-danger"><i class="icon-warning-sign"></i> <?php echo $result; ?> <i class="icon-microphone-off"></i></span>
+							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
 							<?php
 							}
 							?>
@@ -141,8 +141,8 @@
 					} else {
 					?>
 						<tr>
-							<td><strong><i class="icon-desktop"></i> <a href="#" title="<?php echo $line[1]; ?>"> <?php echo $line[0]; ?></a></strong></td>
-							<td><span class="label label-success"><i class="icon-ok"> <?php echo $result; ?></span></td>
+							<td><strong><img src="images/server.png"> <a href="#" title="<?php echo $line[1]; ?>"> <?php echo $line[0]; ?></a></strong></td>
+							<td><span class="label label-success"><img src="images/accept.png"> <?php echo $result; ?></span></td>
 						</tr>
 					<?php
 					$sonline++;
@@ -192,15 +192,15 @@
 						if ($result != "online") {
 					?>	
 						<tr>
-							<td><strong><i class="icon-globe"></i> <a href="http://<?php echo $line[1]; ?>:<?php echo $line[2]; ?>" target="_blank" title="<?php echo $line[1]; ?>"><?php echo $line[0]; ?></a></strong></td>
+							<td><strong><img src="images/world.png"> <a href="#" title="<?php echo $line[1]; ?>"><?php echo $line[0];?></a></strong></td>
 							<?php
 							if ($line[3] != "Quiet") {
 							?>
-							<td><span class="label label-danger"><i class="icon-warning-sign"></i> <?php echo $result; ?></span>
+							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?></span>
 							<?php
 							} else {
 							?>
-							<td><span class="label label-danger"><i class="icon-warning-sign"></i> <?php echo $result; ?> <i class="icon-microphone-off"></i></span>
+							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
 							<?php
 							}
 							?>
@@ -214,8 +214,8 @@
 					} else {
 					?>
 						<tr>
-							<td><strong><i class="icon-globe"></i> <a href="http://<?php echo $line[1]; ?>:<?php echo $line[2]; ?>" target="_blank" title="<?php echo $line[1]; ?>"><?php echo $line[0]; ?></a></strong></td>
-							<td><span class="label label-success"><i class="icon-ok"> <?php echo $result; ?></span></td>
+							<td><strong><img src="images/world.png"> <a href="http://<?php echo $line[1]; ?>:<?php echo $line[2]; ?>" target="_blank" title="<?php echo $line[1]; ?>"><?php echo $line[0]; ?></a></strong></td>
+							<td><span class="label label-success"><img src="images/accept.png"> <?php echo $result; ?></span></td>
 						</tr>
 					<?php
 					$wonline++;
@@ -259,15 +259,15 @@
 						if ($result != "online") {
 					?>	
 						<tr>
-							<td><strong><i class="icon-hdd"></i> <a href="http://<?php echo $line[1]; ?>:<?php echo $line[2]; ?>"  target="_blank" title="<?php echo $line[1]; ?>"><?php echo $line[0]; ?></a></strong></td>
+							<td><strong><img src="images/drive.png"> <a href="#" title="<?php echo $line[1]; ?>"><?php echo $line[0];?></a></strong></td>
 							<?php
 							if ($line[3] != "Quiet") {
 							?>
-							<td><span class="label label-danger"><i class="icon-warning-sign"></i> <?php echo $result; ?></span>
+							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?></span>
 							<?php
 							} else {
 							?>
-							<td><span class="label label-danger"><i class="icon-warning-sign"></i> <?php echo $result; ?> <i class="icon-microphone-off"></i></span>
+							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
 							<?php
 							}
 							?>
@@ -281,8 +281,8 @@
 					} else {
 					?>
 						<tr>
-							<td><strong><i class="icon-hdd"></i> <a href="http://<?php echo $line[1]; ?>:<?php echo $line[2]; ?>" target="_blank" title="<?php echo $line[1]; ?>"><?php echo $line[0]; ?></a></strong></td>
-							<td><span class="label label-success"><i class="icon-ok"> <?php echo $result; ?></span></td>
+							<td><strong><img src="images/drive.png"> <a href="http://<?php echo $line[1]; ?>:<?php echo $line[2]; ?>" target="_blank" title="<?php echo $line[1]; ?>"><?php echo $line[0]; ?></a></strong></td>
+							<td><span class="label label-success"><img src="images/accept.png"> <?php echo $result; ?></span></td>
 						</tr>
 					<?php
 					$qonline++;
@@ -349,8 +349,8 @@
 					if ($line[0] != "") {
 					?>	
 					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-warning-sign"></i> <?php echo $line[1]; ?></h4>
-						<p class="list-group-item-text"><?php echo $line[2]; ?><br/><i class="icon-time"></i> <?php echo $line[0]; ?></p>
+						<h4 class="list-group-item-heading"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></h4>
+						<p class="list-group-item-text"><?php echo $line[2]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
 					</a>
 					
 					<?php

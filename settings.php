@@ -41,14 +41,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
-            <li><a href="assets.php"><i class="icon-desktop"></i> Assets</a></li>
-            <li class="active"><a href="settings.php"><i class="icon-gear"></i> Settings</a></li>
+            <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
+            <li><a href="assets.php"><img src="images/Computer.png"> Assets</a></li>
+            <li class="active"><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
            </ul>
 
           <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown messages-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-bell-alt"></i> Alerts <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/bell.png"> Alerts <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <?php
 					$alertcount = 0;
@@ -60,9 +60,9 @@
 					?>	
 				<li class="message-preview">
                   <a href="#">
-                    <span class="name"><i class="icon-warning-sign"></i> <?php echo $line[1]; ?></span>
+                    <span class="name"><img src="images/error.png"> <font color="red"><?php echo $line[1]; ?></font></span>
                     <span class="message"><?php echo $line[2]; ?></span>
-                    <span class="time"><i class="icon-time"></i> <?php echo $line[0]; ?></span>
+                    <span class="time"><img src="images/Clock.png"> <small><?php echo $line[0]; ?></small></span>
                   </a>
                 </li>
                 <li class="divider"></li>
@@ -72,14 +72,14 @@
 					}
 					fclose($handle);
 				?>
-				<li class="panel-title"><a href="#">New Alerts <span class="badge badge-important"><?php echo $alertcount; ?></span></a></li>
+				<li class="panel-title"> <a href="#"><img src="images/new.png"> <small>Alerts</small> <span class="badge badge-important"><?php echo $alertcount; ?></span></a></li>
               </ul>
             </li>
 			<li class="dropdown user-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> Tasks <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/brick.png"> Tasks <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="add-device.php"><i class="icon-desktop"></i> Add Asset</a></li>
-                <li><a href="remove-log.php"><i class="icon-trash"></i> Clear Alert Log</a></li>
+                <li><a href="add-device.php"><img src="images/computer_add.png"> Add Asset</a></li>
+                <li><a href="remove-log.php"><img src="images/page_white_delete.png"> Clear Alert Log</a></li>
                 <li class="divider"></li>
                 <!--<li><a href="#"><i class="icon-power-off"></i> Log Out</a></li>-->
               </ul>
@@ -94,11 +94,11 @@
 			<div class="col-lg-12">
             <h1><small>Settings Page</small></h1>
             <ol class="breadcrumb">
-              <li><a href="index.php"><i class="icon-dashboard"></i> Dashboard</a></li>
-              <li class="active"><i class="icon-cog"></i> Settings</li>
+              <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
+              <li class="active"><img src="images/cog.png">  Settings</li>
             </ol>
-			<a href="add-device.php" class="btn btn-primary"><i class="icon-plus"></i> Add new asset</a>&nbsp;
-			<a href="remove-log.php" class="btn btn-danger"><i class="icon-trash"></i> Clear Alert Log</a>
+			<a href="add-device.php" class="btn btn-primary"><img src="images/add.png"> Asset</a>&nbsp;
+			<a href="remove-log.php" class="btn btn-danger"><img src="images/page_white_delete.png"> Clear Alert Log</a>
 			</div>
 			</br>
 			
