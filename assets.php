@@ -43,6 +43,7 @@
           <ul class="nav navbar-nav side-nav">
             <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
             <li class="active"><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
+            <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
             <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
            </ul>
 
@@ -61,7 +62,7 @@
               <ul class="dropdown-menu">
                 <li><a href="add-device.php"><img src="images/computer_add.png"> Add Asset</a></li>
                 <li><a href="remove-log.php"><img src="images/page_white_delete.png"> Clear Alert Log</a></li>
-                <li class="divider"></li>
+				<li class="divider"></li>
                 <!--<li><a href="#"><i class="icon-power-off"></i> Log Out</a></li>-->
               </ul>
             </li>
@@ -79,7 +80,6 @@
               <li class="active"><img src="images/computer.png"> Assets</li>
             </ol>
 			<a href="add-device.php" class="btn btn-primary"><img src="images/add.png"> Asset</a>&nbsp;
-			<a href="remove-log.php" class="btn btn-danger"><img src="images/page_white_delete.png"> Clear Alert Log</a>
 			</div>
 			</br>
 			<div class="col-lg-6">

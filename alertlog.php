@@ -43,7 +43,7 @@
           <ul class="nav navbar-nav side-nav">
             <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
             <li><a href="assets.php"><img src="images/Computer.png"> Assets</a></li>
-            <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
+            <li class="active"><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
             <li class="active"><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
            </ul>
 
@@ -74,17 +74,25 @@
 
         <div class="row">
 			<div class="col-lg-12">
-            <h1><small>Settings Page</small></h1>
+            <h1><small>Alert Log</small></h1>
             <ol class="breadcrumb">
               <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
-              <li class="active"><img src="images/cog.png">  Settings</li>
+              <li class="active"><img src="images/book_open.png">  Alert Log</li>
             </ol>
-			<a href="add-device.php" class="btn btn-primary"><img src="images/add.png"> Asset</a>&nbsp;
 			<a href="remove-log.php" class="btn btn-danger"><img src="images/page_white_delete.png"> Clear Alert Log</a>
 			</div>
 			</br>
 			
-			
+			<div class="panel panel-danger">
+              <div class="panel-heading">
+                <h3 class="panel-title">Current Alert Log</h3>
+              </div>
+              <?php
+			  $file = "log.csv";
+			  fulllog("$file");
+			  ?>
+            </div>
+
 			
 			
         </div><!-- /.row -->
@@ -96,6 +104,49 @@
     <!-- Bootstrap core JavaScript -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
+<?php
+function fulllog($file) {
+	#count lines in log file
+	$handle = fopen($file, "r");
+	$linecount = 0;
+	while(!feof($handle)){
+		$line = fgets($handle, 4096);
+		$linecount++;
+	}
+	fclose($handle);
+	
+	
+	#read log file and create webpage entries.
+	$handle = fopen($file, "r");
+	$c = 0;
+	?>
+	<div class="panel-body">
+    <?php
+		while(!feof($handle)){
+			$line = fgetcsv($handle, 0, ",");
+			if ($line[0] != "") {
+			?>	
+			<a href="#" class="list-group-item">
+				<h4 class="list-group-item-heading"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></h4>
+				<p class="list-group-item-text"><?php echo $line[2]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
+			</a>
+			<?php		
+			$c++;
+			}
+		}
+		?>
+		</div>
+		<?php
+		echo '<div class="panel-footer">Showing <span class="badge">' . $linecount . '</span> Alerts</div>';
+	
+	fclose($handle);
+}
+
+?>
+
+	
+	
+	
 <?php
 function readlog($file) {
 	#count lines in log file

@@ -67,6 +67,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand logofont" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
+		  
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,6 +75,7 @@
           <ul class="nav navbar-nav side-nav">
             <li class="active"><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
             <li><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
+            <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
             <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
           </ul>
 
@@ -365,7 +367,7 @@ function writelog($name) {
 		$logfile = "log.csv";
 		$date = date('d-m-Y H:i:s');
 		$content = file_get_contents($logfile);
-		file_put_contents($logfile, $date . "," . $name . ",Failed to respond to a ping request.\n" . $content, LOCK_EX);
+		file_put_contents($logfile, $date  . "," . $name . ",Failed to respond to a ping request.\n" . $content, LOCK_EX);
 	}	
 ?>		
 
