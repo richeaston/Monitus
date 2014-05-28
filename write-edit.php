@@ -19,5 +19,5 @@ foreach ($lines as $key => $value) {
 fwrite($gfp, "\n" . $name . "," . $ipaddress . "," . $port . "," . $alert);
 fclose($gfp);
 
-header( 'Location: settings.php' ) ;
+header( 'Location: assets.php' ) ;
 ?>
