@@ -45,7 +45,7 @@
 	$file = "log.csv";
 	if (file_exists($file)) {
 	$lines = count(file($file));
-		if ($lines > 5){
+		if ($lines > 50){
 		$fh = fopen($file, 'w');
 		fclose($fh);
 		}
@@ -123,11 +123,11 @@
 							<?php
 							if ($line[3] != "Quiet") {
 							?>
-							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?></span>
+							<td><span class="label label-danger"><img src="images/bullet_error.png"> <?php echo $result; ?></span>
 							<?php
 							} else {
 							?>
-							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
+							<td><span class="label label-danger"><img src="images/bullet_error.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
 							<?php
 							}
 							?>
@@ -196,11 +196,11 @@
 							<?php
 							if ($line[3] != "Quiet") {
 							?>
-							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?></span>
+							<td><span class="label label-danger"><img src="images/bullet_error.png"> <?php echo $result; ?></span>
 							<?php
 							} else {
 							?>
-							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
+							<td><span class="label label-danger"><img src="images/bullet_error.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
 							<?php
 							}
 							?>
@@ -263,11 +263,11 @@
 							<?php
 							if ($line[3] != "Quiet") {
 							?>
-							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?></span>
+							<td><span class="label label-danger"><img src="images/bullet_error.png"> <?php echo $result; ?></span>
 							<?php
 							} else {
 							?>
-							<td><span class="label label-danger"><img src="images/exclamation.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
+							<td><span class="label label-danger"><img src="images/bullet_error.png"> <?php echo $result; ?> </span> <img src="images/sound_mute.png">
 							<?php
 							}
 							?>
@@ -337,31 +337,18 @@
 				</div>
 			</div>
 			
-			<div class="list-group">
-                <a href="#" class="list-group-item">
-                  <h4 class="list-group-item-heading"><U><B>Most Recent Alert!</b></u></h4>
-                	<div class="list-group">
-					<?php
-					$file="log.csv";
-					$handle = fopen($file, "r");
-					while(!feof($handle)){
-					$line = fgetcsv($handle, 0, ",");
-					if ($line[0] != "") {
-					?>	
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></h4>
-						<p class="list-group-item-text"><?php echo $line[2]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
-					</a>
-					
-					<?php
-					}
-					}
-					fclose($handle);
-					?>
-					</div>
-					
-                </a>
-             </div>
+			<div class="panel panel-danger">
+              <div class="panel-heading">
+                <h3 class="panel-title"><img src="images/new.png"> <small>Alerts</small></h3>
+              </div>
+                <?php
+				$file="log.csv";
+				readlog("$file");
+				?>
+              </div>
+            </div>
+			
+			
 			
 			
 		</div>
@@ -377,12 +364,71 @@
 function writelog($name) {
 		$logfile = "log.csv";
 		$date = date('d-m-Y H:i:s');
-		file_put_contents($logfile, $date . "," . $name . ",Failed to respond to a ping request.\n", FILE_APPEND | LOCK_EX);
+		$content = file_get_contents($logfile);
+		file_put_contents($logfile, $date . "," . $name . ",Failed to respond to a ping request.\n" . $content, LOCK_EX);
 	}	
 ?>		
 
+<?php 
 
+function readlog($file) {
+	#count lines in log file
+	$offset = 5;
+	$handle = fopen($file, "r");
+	$linecount = 0;
+	while(!feof($handle)){
+		$line = fgets($handle, 4096);
+		$linecount++;
+	}
+	fclose($handle);
+	
+	
+	#read log file and create webpage entries.
+	$handle = fopen($file, "r");
+	$c = 0;
+	?>
+	<div class="panel-body">
+    <?php
+	if ($linecount > $offset) {
+		while($c<=($offset-1)){
+			$line = fgetcsv($handle, 0, ",");
+			if ($line[0] != "") {
+			?>	
+			<a href="#" class="list-group-item">
+				<h4 class="list-group-item-heading"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></h4>
+				<p class="list-group-item-text"><?php echo $line[2]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
+			</a>
+			<?php		
+			$c++;
+			}
+		}
+		?>
+		</div>
+		<?php
+		echo '<div class="panel-footer">Showing ' . $offset . ' of ' . $linecount . ' Total Alerts</div>';
+	} else {
+		while(!feof($handle)){
+			$line = fgetcsv($handle, 0, ",");
+			if ($line[0] != "") {
+			?>	
+			<a href="#" class="list-group-item">
+				<h4 class="list-group-item-heading"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></h4>
+				<p class="list-group-item-text"><?php echo $line[2]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
+			</a>
+			<?php		
+			$c++;
+			}
+		}
+		?>
+		</div>
+		<?php
+		echo '<div class="panel-footer">Showing ' . ($c) . ' of ' . $linecount . ' Total Alerts</div>';
 
+	}
+	fclose($handle);
+}
+
+?>
 
 <?php
  

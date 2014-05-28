@@ -51,29 +51,10 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/bell.png"> Alerts <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <?php
-					$alertcount = 0;
 					$file="log.csv";
-					$handle = fopen($file, "r");
-					while(!feof($handle)){
-					$line = fgetcsv($handle, 0, ",");
-					if ($line[0] != "") {
-					?>	
-				<li class="message-preview">
-                  <a href="#">
-                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
-                    <span class="message"><?php echo $line[2]; ?></span>
-                    <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
-                  </a>
-                </li>
-                <li class="divider"></li>
-                <?php
-					$alertcount++;
-					}
-					}
-					fclose($handle);
+					readlog("$file");
 				?>
-				<li class="panel-title"><a href="#"><img src="images/new.png"> <small>Alerts</small> <span class="badge badge-important"><?php echo $alertcount; ?></span></a></li>
-              </ul>
+				</ul>
             </li>
 			<li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/brick.png"> Tasks <b class="caret"></b></a>
@@ -234,5 +215,69 @@
     <!-- Bootstrap core JavaScript -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-  </body>
+<?php
+function readlog($file) {
+	#count lines in log file
+	$offset = 5;
+	$handle = fopen($file, "r");
+	$linecount = 0;
+	while(!feof($handle)){
+		$line = fgets($handle, 4096);
+		$linecount++;
+	}
+	fclose($handle);
+	
+	
+	#read log file and create webpage entries.
+	$handle = fopen($file, "r");
+	$c = 0;
+	?>
+	<?php
+	if ($linecount > $offset) {
+		while($c<=($offset-1)){
+			$line = fgetcsv($handle, 0, ",");
+			if ($line[0] != "") {
+			?>	
+			<li class="message-preview">
+                  <a href="#">
+                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
+                    <span class="message"><?php echo $line[2]; ?></span>
+                    <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
+                  </a>
+                </li>
+            <li class="divider"></li>
+			<?php		
+			$c++;
+			}
+		}
+		?>
+		<li class="panel-title"><a href="#"><img src="images/new.png"> <small>Alerts</small> <span class="badge"><?php echo $c; ?></span> of <span class="badge"><?php echo $linecount; ?></span></a></li>
+		<?php
+	} else {
+		while(!feof($handle)){
+			$line = fgetcsv($handle, 0, ",");
+			if ($line[0] != "") {
+			?>	
+			<li class="message-preview">
+                  <a href="#">
+                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
+                    <span class="message"><?php echo $line[2]; ?></span>
+                    <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
+                  </a>
+                </li>
+            <li class="divider"></li>
+			<?php		
+			$c++;
+			}
+		}
+		?>
+		<li class="panel-title"><a href="#"><img src="images/new.png"> <small>Alerts</small> <span class="badge"><?php echo $c; ?></span> of <span class="badge"><?php echo $linecount; ?></span></a></li>
+		<?php
+
+	}
+	fclose($handle);
+}
+
+?>
+ </body>
 </html>

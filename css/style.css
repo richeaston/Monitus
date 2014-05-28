@@ -7,3 +7,19 @@ font-family: 'Oleo Script', cursive;
 color: whitesmoke !important;
 font-size: 28px !important;
 }
+
+.alerthdr {
+background: #febbbb;
+background: -moz-linear-gradient(top,  #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#febbbb), color-stop(45%,#fe9090), color-stop(100%,#ff5c5c));
+background: -webkit-linear-gradient(top,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+background: -o-linear-gradient(top,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+background: -ms-linear-gradient(top,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+background: linear-gradient(to bottom,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ff5c5c',GradientType=0 );
+}
+
+.alertsub {
+background: #428bca;
+color: whitesmoke;
+}
