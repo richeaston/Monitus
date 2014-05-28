@@ -19,5 +19,10 @@ foreach ($lines as $key => $value) {
 fwrite($gfp, "\n" . $name . "," . $ipaddress . "," . $port . "," . $alert);
 fclose($gfp);
 
+$date = date('d-m-Y H:i:s');
+	$content = file_get_contents($logfile);
+	file_put_contents($logfile, $date  . "," . $_POST["servername"] . ",". $_POST["servername"] . " updated on the list: " . $_POST["type"] . "\n" . $content, LOCK_EX);
+	header( 'Location: assets.php' ) ;
+	
 header( 'Location: assets.php' ) ;
 ?>
