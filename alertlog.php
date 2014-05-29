@@ -44,8 +44,8 @@
             <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
             <li><a href="assets.php"><img src="images/Computer.png"> Assets</a></li>
             <li class="active"><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
-            <li class="active"><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
-           </ul>
+            <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
+			</ul>
 
           <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown messages-dropdown">

@@ -54,6 +54,8 @@
 	file_put_contents($file, $date . ",Alert Log Created,Alert Log not found! Created one.\n");
 	}
 ?>
+
+
     <div id="wrapper">
 
       <!-- Sidebar -->
@@ -77,14 +79,16 @@
             <li><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
             <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
             <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
-          </ul>
-
+		 </ul>
+		 
           <ul class="nav navbar-nav navbar-right navbar-user">
-             <li class="dropdown user-dropdown">
+           <li><a href="#"><img src="images/clock.png"> Refresh in: <span id="countdown"></span></a></li>
+		   <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/brick.png"> Menu <b class="caret"></b></a>
               <ul class="dropdown-menu">
                  <li><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
-                 <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
+                 <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
+            	 <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
               </ul>
             </li>
           </ul>
@@ -167,7 +171,7 @@
             </div>
 			
 			</div>
-			<div class="col-lg-5">
+			<div class="col-lg-4">
 			<div class="panel panel-primary">
               <div class="panel-heading">
                 <h3 class="panel-title">Websites</h3>
@@ -303,7 +307,7 @@
 			</div>
 		</div>
 		
-		<div class="col-lg-3">
+		<div class="col-lg-4">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title">Service Status</h3>
@@ -441,6 +445,26 @@ function getStatus($ip,$port){
 }
  
 ?>			
-	
+<script>
+var seconds = 119;
+function secondPassed() {
+    var minutes = Math.round((seconds - 30)/60);
+    var remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;  
+    }
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = "<img src='images/arrow_refresh.png'>";
+    } else {
+        seconds--;
+    }
+}
+ 
+var countdownTimer = setInterval('secondPassed()', 1000);
+</script>
+
 	</body>
+	
 </html>
