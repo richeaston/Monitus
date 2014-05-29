@@ -428,7 +428,7 @@ function readlog($file) {
 		?>
 		</div>
 		<?php
-		echo '<div class="panel-footer">Showing ' . ($c) . ' of ' . $linecount . ' Total Alerts</div>';
+		echo '<div class="panel-footer">Showing ' . ($c) . ' of ' . $linecount . ' Total Alerts <a href="alertlog.php" class="pull-right btn btn-primary btn-xs"><img src="images/page_find.png"> See More</a></div>';
 
 	}
 	fclose($handle);
