@@ -74,20 +74,90 @@
 
         <div class="row">
 			<div class="col-lg-12">
-            <h1><small>Settings Page</small></h1>
-            <ol class="breadcrumb">
-              <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
-              <li class="active"><img src="images/cog.png">  Settings</li>
-            </ol>
-			<a href="add-device.php" class="btn btn-primary"><img src="images/add.png"> Asset</a>&nbsp;
-			<a href="remove-log.php" class="btn btn-danger"><img src="images/page_white_delete.png"> Clear Alert Log</a>
+				<h1><small>Settings Page</small></h1>
+				<ol class="breadcrumb">
+					<li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
+					<li class="active"><img src="images/cog.png">  Settings</li>
+				</ol>
+					<a href="add-device.php" class="btn btn-primary"><img src="images/add.png"> Asset</a>&nbsp;
+					<a href="remove-log.php" class="btn btn-danger"><img src="images/page_white_delete.png"> Clear Alert Log</a>
 			</div>
 			</br>
-			
-			
-			
-			
-        </div><!-- /.row -->
+			<div class="col-lg-4">		
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Site Settings</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label>Site Refresh</label>
+								<input class="form-control" name="site-refresh" placeholder="120">
+								<p class="help-block">Default is 120 secs</p>
+							</div>
+							<div class="form-group">
+								<label>Timer Refresh</label>
+								<input class="form-control" name="site-refresh" placeholder="119">
+								<p class="help-block">Default is 119 secs</p>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Alert Settings</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label>No of alerts to display</label>
+								<input class="form-control" name="site-refresh" placeholder="5">
+								<p class="help-block">Default is 5 alerts</p>
+							</div>
+							<div class="form-group">
+								<label>Clear Alert log at </label>
+								<input class="form-control" name="site-refresh" placeholder="50">
+								<p class="help-block">Default is 50 alerts</p>
+							</div>
+						</div>		
+					</div>
+			</div>
+			<div class="col-lg-4">		
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Socket Settings</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label>Response Timeout</label>
+								<input class="form-control" name="site-refresh" placeholder="2">
+								<p class="help-block">Default is 2</p>
+							</div>
+							<div class="form-group">
+								<label>Ports</label>
+								<input class="form-control" name="site-refresh" placeholder="21|22|139|80|1080">
+								<p class="help-block">seperate each port with a "|"</p>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Email Settings</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset disabled="">
+							<div class="form-group">
+								<label>Sender</label>
+								<input class="form-control" name="site-refresh" placeholder="Coming soon!">
+								<p class="help-block">Sender email</p>
+							</div>
+							<div class="form-group">
+								<label>Recipient </label>
+								<input class="form-control" name="site-refresh" placeholder="Coming soon!">
+								<p class="help-block">Recipient email</p>
+							</div>
+                			</fieldset>
+						</div>		
+					</div>
+			</div>
+		</div><!-- /.row -->
 
       </div><!-- /#page-wrapper -->
 

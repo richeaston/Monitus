@@ -80,9 +80,8 @@
               <li class="active"><img src="images/book_open.png">  Alert Log</li>
             </ol>
 			<a href="remove-log.php" class="btn btn-danger"><img src="images/page_white_delete.png"> Clear Alert Log</a>
-			</div>
-			</br>
-			
+		</br>
+		</br>
 			<div class="panel panel-danger">
               <div class="panel-heading">
                 <h3 class="panel-title">Current Alert Log</h3>
@@ -93,6 +92,10 @@
 			  ?>
             </div>
 
+		
+		</div>
+			
+		
 			
 			
         </div><!-- /.row -->
