@@ -157,6 +157,9 @@
 						</div>		
 					</div>
 			</div>
+			<div class="col-lg-4">		
+					<button type="submit" class="btn btn-success"><img src="images/page_save.png"> Save Settings</button>
+			</div>
 		</div><!-- /.row -->
 
       </div><!-- /#page-wrapper -->
