@@ -72,7 +72,7 @@
       </nav>
 
       <div id="page-wrapper">
-		<form method="post" action="#">
+		<form method="post" action="write-settings.php">
         <div class="row">
 			<div class="col-lg-12">
 				<h1><small>Settings Page</small></h1>
@@ -94,12 +94,12 @@
 						<div class="panel-body">
 							<div class="form-group">
 								<label>Site Refresh</label>
-								<input class="form-control" name="srefresh" placeholder="120" value="120">
+								<input class="form-control" id="srefresh" name="srefresh" placeholder="120" value="120">
 								<p class="help-block">Default is 120 secs</p>
 							</div>
 							<div class="form-group">
 								<label>Timer Refresh</label>
-								<input class="form-control" name="trefresh" placeholder="119" value="119">
+								<input class="form-control" id="trefresh" name="trefresh" placeholder="119" value="119">
 								<p class="help-block">Default is 119 secs</p>
 							</div>
 						</div>
@@ -111,12 +111,12 @@
 						<div class="panel-body">
 							<div class="form-group">
 								<label>No of alerts to display</label>
-								<input class="form-control" name="noofalerts" placeholder="5" value="5">
+								<input class="form-control" id="noofalerts" name="noofalerts" placeholder="5" value="5">
 								<p class="help-block">Default is 5 alerts</p>
 							</div>
 							<div class="form-group">
 								<label>Clear Alert log at </label>
-								<input class="form-control" name="srefresh" placeholder="50" value="50">
+								<input class="form-control" id="clearalertno" name="clearalertno" placeholder="50" value="50">
 								<p class="help-block">Default is 50 alerts</p>
 							</div>
 						</div>		
@@ -130,12 +130,12 @@
 						<div class="panel-body">
 							<div class="form-group">
 								<label>Response Timeout</label>
-								<input class="form-control" name="rtimeout" placeholder="2" value="2">
+								<input class="form-control" id="rtimeout" name="rtimeout" placeholder="2" value="2">
 								<p class="help-block">Default is 2</p>
 							</div>
 							<div class="form-group">
 								<label>Ports</label>
-								<input class="form-control" name="ports" placeholder="21|22|139|80|1080" value="21|22|139|80|1080">
+								<input class="form-control" id="ports" name="ports" placeholder="21|22|139|80|1080" value="21|22|139|80|1080">
 								<p class="help-block">seperate each port with a "|"</p>
 							</div>
 						</div>
@@ -148,12 +148,12 @@
 							<fieldset disabled="">
 							<div class="form-group">
 								<label>Sender</label>
-								<input class="form-control" name="semail" placeholder="Coming soon!">
+								<input class="form-control" id="semail" name="semail" placeholder="Coming soon!">
 								<p class="help-block">Sender email</p>
 							</div>
 							<div class="form-group">
 								<label>Recipient </label>
-								<input class="form-control" name="remail" placeholder="Coming soon!">
+								<input class="form-control" id="remail" name="remail" placeholder="Coming soon!">
 								<p class="help-block">Recipient email</p>
 							</div>
                 			</fieldset>
@@ -197,8 +197,8 @@ function readlog($file) {
 			?>	
 			<li class="message-preview">
                   <a href="#">
-                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
-                    <span class="message"><?php echo $line[2]; ?></span>
+                    <span class="name"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></span>
+                    <span class="message"><?php echo $line[3]; ?></span>
                     <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
                   </a>
                 </li>
@@ -217,8 +217,8 @@ function readlog($file) {
 			?>	
 			<li class="message-preview">
                   <a href="#">
-                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
-                    <span class="message"><?php echo $line[2]; ?></span>
+                    <span class="name"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></span>
+                    <span class="message"><?php echo $line[3]; ?></span>
                     <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
                   </a>
                 </li>

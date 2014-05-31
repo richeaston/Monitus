@@ -12,7 +12,8 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   </head>
 
@@ -36,7 +37,7 @@ $alert = $_GET['a'];
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
+          <a class="navbar-brand logofont" href="index.php"><img src="monitus.png" width="28px" border="0"> Monitus Dashboard</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -103,7 +104,7 @@ $alert = $_GET['a'];
                 <input type="text" class="form-control" id="servername" name="servername" placeholder="Name" value="<?php echo $name; ?>">
               </div>
 			  <div class="form-group input-group">
-                <span class="input-group-addon"><i class="icon-sitemap"></i> Address</span>
+                <span class="input-group-addon"><img src="images/chart_organisation.png">  Address</span>
                 <input type="text" class="form-control" id="ipaddress" name="ipaddress" placeholder="Address" value="<?php echo $ipaddress; ?>">
               </div>
 			  <div class="form-group input-group">

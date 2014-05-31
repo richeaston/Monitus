@@ -15,7 +15,7 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 	<link rel="icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 
@@ -240,8 +240,8 @@ function readlog($file) {
 			?>	
 			<li class="message-preview">
                   <a href="#">
-                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
-                    <span class="message"><?php echo $line[2]; ?></span>
+                    <span class="name"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></span>
+                    <span class="message"><?php echo $line[3]; ?></span>
                     <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
                   </a>
                 </li>
@@ -260,8 +260,8 @@ function readlog($file) {
 			?>	
 			<li class="message-preview">
                   <a href="#">
-                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
-                    <span class="message"><?php echo $line[2]; ?></span>
+                    <span class="name"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></span>
+                    <span class="message"><?php echo $line[3]; ?></span>
                     <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
                   </a>
                 </li>

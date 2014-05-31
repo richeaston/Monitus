@@ -1,0 +1,6 @@
+site-refresh,120
+timer-refresh,119
+alerts-no,5
+clear-no,50
+timeout,2
+ports,21|22|139|80|1080

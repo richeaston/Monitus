@@ -17,7 +17,7 @@
 	<link rel="icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 
     <!-- Add custom CSS here -->
-    <link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   </head>
@@ -51,7 +51,7 @@
 		}
 	} else {
 	$date = date('d-m-Y H:i:s');
-	file_put_contents($file, $date . ",Alert Log Created,Alert Log not found! Created one.\n");
+	file_put_contents($file, $date . ",information.png,Alert Log Created,Alert Log not found! Created one.\n");
 	}
 ?>
 
@@ -99,7 +99,7 @@
 		</br>
         <div class="row row-valign">
 			<div class="col-lg-4">
-			<div class="panel panel-primary">
+			<div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">Servers</h3>
               </div>
@@ -159,7 +159,7 @@
 					$smeh = round(($soffline / ($sonline+$soffline) * 100) , 0);
 					$p = (100 - $smeh);
 					?>
-						<tr><td colspan="2"><h4>Servers Online: <span class="label label-primary"><?php echo $sonline; ?></span> of <span class="label label-primary"><?php echo $total; ?></span></h4></td></tr>
+						<tr><td colspan="2"><h4>Servers Online: <span class="label label-default"><?php echo $sonline; ?></span> of <span class="label label-default"><?php echo $total; ?></span></h4></td></tr>
 					<?php
 					
 					fclose($handle);
@@ -172,7 +172,7 @@
 			
 			</div>
 			<div class="col-lg-4">
-			<div class="panel panel-primary">
+			<div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">Websites</h3>
               </div>
@@ -239,7 +239,7 @@
               </div>
 			</div>
 			
-			<div class="panel panel-primary">
+			<div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">Storage</h3>
               </div>
@@ -308,7 +308,7 @@
 		</div>
 		
 		<div class="col-lg-4">
-			<div class="panel panel-primary">
+			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Service Status</h3>
 				</div>
@@ -371,7 +371,7 @@ function writelog($name) {
 		$logfile = "log.csv";
 		$date = date('d-m-Y H:i:s');
 		$content = file_get_contents($logfile);
-		file_put_contents($logfile, $date  . "," . $name . ",Failed to respond to a ping request.\n" . $content, LOCK_EX);
+		file_put_contents($logfile, $date  . ",error.png," . $name . ",Failed to respond to a ping request.\n" . $content, LOCK_EX);
 	}	
 ?>		
 
@@ -401,8 +401,8 @@ function readlog($file) {
 			if ($line[0] != "") {
 			?>	
 			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></h4>
-				<p class="list-group-item-text"><?php echo $line[2]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
+				<h4 class="list-group-item-heading"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></h4>
+				<p class="list-group-item-text"><?php echo $line[3]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
 			</a>
 			<?php		
 			$c++;
@@ -418,8 +418,8 @@ function readlog($file) {
 			if ($line[0] != "") {
 			?>	
 			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></h4>
-				<p class="list-group-item-text"><?php echo $line[2]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
+				<h4 class="list-group-item-heading"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></h4>
+				<p class="list-group-item-text"><?php echo $line[3]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
 			</a>
 			<?php		
 			$c++;
