@@ -15,7 +15,7 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 	<link rel="icon" type="image/vnd.microsoft.icon" href="Favicon.ico">
 
@@ -62,6 +62,7 @@
               <ul class="dropdown-menu">
                 <li><a href="add-device.php"><img src="images/computer_add.png"> Add Asset</a></li>
                 <li><a href="remove-log.php"><img src="images/page_white_delete.png"> Clear Alert Log</a></li>
+                <li><a href="backup.php"><img src="images/page_white_zip.png"> Backup Settings and Assets</a></li>
                 <li class="divider"></li>
                 <!--<li><a href="#"><i class="icon-power-off"></i> Log Out</a></li>-->
               </ul>
@@ -71,7 +72,7 @@
       </nav>
 
       <div id="page-wrapper">
-
+		<form method="post" action="#">
         <div class="row">
 			<div class="col-lg-12">
 				<h1><small>Settings Page</small></h1>
@@ -81,6 +82,8 @@
 				</ol>
 					<a href="add-device.php" class="btn btn-primary"><img src="images/add.png"> Asset</a>&nbsp;
 					<a href="remove-log.php" class="btn btn-danger"><img src="images/page_white_delete.png"> Clear Alert Log</a>
+					<button type="submit" class="btn btn-success"><img src="images/disk.png"> Save Settings</button>
+					<a href="backup.php" class="btn btn-info"><img src="images/page_white_zip.png"> Backup Settings and Assets</a>
 			</div>
 			</br>
 			<div class="col-lg-4">		
@@ -91,12 +94,12 @@
 						<div class="panel-body">
 							<div class="form-group">
 								<label>Site Refresh</label>
-								<input class="form-control" name="site-refresh" placeholder="120">
+								<input class="form-control" name="srefresh" placeholder="120" value="120">
 								<p class="help-block">Default is 120 secs</p>
 							</div>
 							<div class="form-group">
 								<label>Timer Refresh</label>
-								<input class="form-control" name="site-refresh" placeholder="119">
+								<input class="form-control" name="trefresh" placeholder="119" value="119">
 								<p class="help-block">Default is 119 secs</p>
 							</div>
 						</div>
@@ -108,12 +111,12 @@
 						<div class="panel-body">
 							<div class="form-group">
 								<label>No of alerts to display</label>
-								<input class="form-control" name="site-refresh" placeholder="5">
+								<input class="form-control" name="noofalerts" placeholder="5" value="5">
 								<p class="help-block">Default is 5 alerts</p>
 							</div>
 							<div class="form-group">
 								<label>Clear Alert log at </label>
-								<input class="form-control" name="site-refresh" placeholder="50">
+								<input class="form-control" name="srefresh" placeholder="50" value="50">
 								<p class="help-block">Default is 50 alerts</p>
 							</div>
 						</div>		
@@ -127,12 +130,12 @@
 						<div class="panel-body">
 							<div class="form-group">
 								<label>Response Timeout</label>
-								<input class="form-control" name="site-refresh" placeholder="2">
+								<input class="form-control" name="rtimeout" placeholder="2" value="2">
 								<p class="help-block">Default is 2</p>
 							</div>
 							<div class="form-group">
 								<label>Ports</label>
-								<input class="form-control" name="site-refresh" placeholder="21|22|139|80|1080">
+								<input class="form-control" name="ports" placeholder="21|22|139|80|1080" value="21|22|139|80|1080">
 								<p class="help-block">seperate each port with a "|"</p>
 							</div>
 						</div>
@@ -145,12 +148,12 @@
 							<fieldset disabled="">
 							<div class="form-group">
 								<label>Sender</label>
-								<input class="form-control" name="site-refresh" placeholder="Coming soon!">
+								<input class="form-control" name="semail" placeholder="Coming soon!">
 								<p class="help-block">Sender email</p>
 							</div>
 							<div class="form-group">
 								<label>Recipient </label>
-								<input class="form-control" name="site-refresh" placeholder="Coming soon!">
+								<input class="form-control" name="remail" placeholder="Coming soon!">
 								<p class="help-block">Recipient email</p>
 							</div>
                 			</fieldset>
@@ -158,8 +161,8 @@
 					</div>
 			</div>
 			<div class="col-lg-4">		
-					<button type="submit" class="btn btn-success"><img src="images/page_save.png"> Save Settings</button>
 			</div>
+		  	</form>
 		</div><!-- /.row -->
 
       </div><!-- /#page-wrapper -->
