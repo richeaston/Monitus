@@ -119,7 +119,7 @@
 					$soffline = 0;
 					$handle = fopen($file, "r");
 					while(!feof($handle)){
-					$line = fgetcsv($handle, 0, ",");
+					$line = @fgetcsv($handle, 0, ",");
 					if ($line[0] != "") {
 						$result = getStatus("$line[1]", "$line[2]");
 						if ($result != "online") {
@@ -192,7 +192,7 @@
 					$woffline = 0;
 					$handle = fopen($file, "r");
 					while(!feof($handle)){
-					$line = fgetcsv($handle, 0, ",");
+					$line = @fgetcsv($handle, 0, ",");
 					if ($line[0] != "") {
 						$result = getStatus("$line[1]", "$line[2]");
 						if ($result != "online") {
@@ -259,7 +259,7 @@
 					$qoffline = 0;
 					$handle = fopen($file, "r");
 					while(!feof($handle)){
-					$line = fgetcsv($handle, 0, ",");
+					$line = @fgetcsv($handle, 0, ",");
 					if ($line[0] != "") {
 						$result = getStatus("$line[1]", "$line[2]");
 						if ($result != "online") {
@@ -397,7 +397,7 @@ function readlog($file) {
     <?php
 	if ($linecount > $offset) {
 		while($c<=($offset-1)){
-			$line = fgetcsv($handle, 0, ",");
+			$line = @fgetcsv($handle, 0, ",");
 			if ($line[0] != "") {
 			?>	
 			<a href="#" class="list-group-item">
