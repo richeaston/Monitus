@@ -12,6 +12,7 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 
 body {
   margin-top: 50px;
+  background-image: url('../images/crossword/crossword.png');
 }
 
 #wrapper {
@@ -99,18 +100,42 @@ table.tablesorter thead tr th:hover {
   /* Side Nav */
 
   .side-nav {
-	margin-left: -225px;
+	animation:mymove 1s;
+	-webkit-animation:mymove 1s; /* Safari and Chrome */
+	margin-top: 15px;
+	margin-left: -215px;
 	left: 225px;
 	width: 225px;
 	position: fixed;
 	top: 50px;
-	height: 100%;
-	border-radius: 0;
-	border: none;
-	background-color: #222222;
+	height: auto;
+	border-radius: 8px;
+	border: 0;
+	/*background-color: #222222;*/
+	background: #45484d;
+	background: -moz-linear-gradient(left,  #45484d 0%, #000000 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#45484d), color-stop(100%,#000000));
+	background: -webkit-linear-gradient(left,  #45484d 0%,#000000 100%);
+	background: -o-linear-gradient(left,  #45484d 0%,#000000 100%);
+	background: -ms-linear-gradient(left,  #45484d 0%,#000000 100%);
+	background: linear-gradient(to right,  #45484d 0%,#000000 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 );
 	overflow-y: auto;
   }
 
+@keyframes mymove
+{
+0%   {left:-250px;}
+100% {left:225px;}
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+0%   {left:-250px;}
+100% {left:225px;}
+}
+  
+  
   /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
 
   .side-nav>li.dropdown>ul.dropdown-menu {

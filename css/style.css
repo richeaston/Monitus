@@ -3,7 +3,7 @@ vertical-align: top;
 }
 
 .logofont {
-font-family: 'Oleo Script', cursive;
+font-family: 'Lobster', cursive;
 color: whitesmoke !important;
 font-size: 28px !important;
 }
@@ -22,4 +22,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', end
 .alertsub {
 background: #428bca;
 color: whitesmoke;
+}
+
+.shadow {
+box-shadow: 2px 2px 8px #0a0a0a;
+}
+
+.nav-shadow {
+box-shadow: 2px 2px 8px #0a0a0a;
 }

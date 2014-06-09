@@ -59,7 +59,7 @@
     <div id="wrapper">
 
       <!-- Sidebar -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-inverse navbar-fixed-top shadow" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -74,7 +74,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav side-nav">
+          <ul class="nav navbar-nav side-nav nav-shadow">
             <li class="active"><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
             <li><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
             <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
@@ -92,12 +92,12 @@
               </ul>
             </li>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </nav>
+
+		</div><!-- /.navbar-collapse -->
+     </nav>
 
       <div id="page-wrapper">
-		</br>
-        <div class="row row-valign">
+		<div class="row row-valign">
 			<div class="col-lg-4">
 			<div class="panel panel-default">
               <div class="panel-heading">
@@ -315,29 +315,29 @@
 				<div class="panel-body">
 						<div class="progress progress-striped active">
 						<?php if ($p > 99) { ?>	
-							<div class="progress-bar progress-bar-success" style="width: <?php echo $p;?>%"><strong>Servers <?php echo $p;?>%</strong></div>
-						<?php } elseif ($p >= 90) { ?>
-							<div class="progress-bar progress-bar-warning" style="width: <?php echo $p;?>%"><strong>Servers <?php echo $p;?>%</strong></div>
+							<div class="progress-bar progress-bar-success" style="width: <?php echo $p;?>%"><img src="images/emoticon_happy.png"><strong>Servers <?php echo $p;?>%</strong></div>
+						<?php } elseif ($p >= 80) { ?>
+							<div class="progress-bar progress-bar-warning" style="width: <?php echo $p;?>%"><img src="images/emoticon_unhappy.png"><strong>Servers <?php echo $p;?>%</strong></div>
 						<?php } else { ?>
-							<div class="progress-bar progress-bar-danger" style="width: <?php echo $p;?>%"><strong>Servers <?php echo $p;?>%</strong></div>
+							<div class="progress-bar progress-bar-danger" style="width: <?php echo $p;?>%"><img src="images/bullet_error.png"><strong>Servers <?php echo $p;?>%</strong></div>
 						<?php } ?>
 						</div>
 						<div class="progress progress-striped active">
 						<?php if ($w > 99) { ?>	
-							<div class="progress-bar progress-bar-success" style="width: <?php echo $w;?>%"><strong>Websites <?php echo $w;?>%</strong></div>
-						<?php } elseif ($w >= 90) { ?>
-							<div class="progress-bar progress-bar-warning" style="width: <?php echo $w;?>%"><strong>Websites <?php echo $w;?>%</strong></div>
+							<div class="progress-bar progress-bar-success" style="width: <?php echo $w;?>%"><img src="images/emoticon_happy.png"><strong>Websites <?php echo $w;?>%</strong></div>
+						<?php } elseif ($w >= 80) { ?>
+							<div class="progress-bar progress-bar-warning" style="width: <?php echo $w;?>%"><img src="images/emoticon_unhappy.png"><strong>Websites <?php echo $w;?>%</strong></div>
 						<?php } else { ?>
-							<div class="progress-bar progress-bar-danger" style="width: <?php echo $w;?>%"><strong>Websites <?php echo $w;?>%</strong></div>
+							<div class="progress-bar progress-bar-danger" style="width: <?php echo $w;?>%"><img src="images/bullet_error.png"><strong>Websites <?php echo $w;?>%</strong></div>
 						<?php } ?>
 						</div>
 						<div class="progress progress-striped active">
 						<?php if ($q > 99) { ?>	
-							<div class="progress-bar progress-bar-success" style="width: <?php echo $q;?>%"><strong>Storage <?php echo $q;?>%</strong></div>
-						<?php } elseif ($q >= 90) { ?>
-							<div class="progress-bar progress-bar-warning" style="width: <?php echo $q;?>%"><strong>Storage <?php echo $q;?>%</strong></div>
+							<div class="progress-bar progress-bar-success" style="width: <?php echo $q;?>%"><img src="images/emoticon_happy.png"><strong>Storage <?php echo $q;?>%</strong></div>
+						<?php } elseif ($q >= 80) { ?>
+							<div class="progress-bar progress-bar-warning" style="width: <?php echo $q;?>%"><img src="images/emoticon_unhappy.png"><strong>Storage <?php echo $q;?>%</strong></div>
 						<?php } else { ?>
-							<div class="progress-bar progress-bar-danger" style="width: <?php echo $q;?>%"><strong>Storage <?php echo $q;?>%</strong></div>
+							<div class="progress-bar progress-bar-danger" style="width: <?php echo $q;?>%"><img src="images/bullet_error.png"><strong>Storage <?php echo $q;?>%</strong></div>
 						<?php } ?>
 						</div>
 				</div>
@@ -352,7 +352,9 @@
 				readlog("$file");
 				?>
               </div>
-            </div>
+       		<FORM><INPUT class="btn btn-warning" TYPE="button" onClick="history.go(0)" VALUE="Force Refresh"></FORM>
+
+			</div>
 			
 			
 			
