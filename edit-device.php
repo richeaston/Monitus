@@ -181,8 +181,8 @@ function readlog($file) {
 			?>	
 			<li class="message-preview">
                   <a href="#">
-                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
-                    <span class="message"><?php echo $line[2]; ?></span>
+                    <span class="name"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></span>
+                    <span class="message"><?php echo $line[3]; ?></span>
                     <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
                   </a>
                 </li>
@@ -201,8 +201,8 @@ function readlog($file) {
 			?>	
 			<li class="message-preview">
                   <a href="#">
-                    <span class="name"><img src="images/error.png"><font color="red"> <?php echo $line[1]; ?></font></span>
-                    <span class="message"><?php echo $line[2]; ?></span>
+                    <span class="name"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></span>
+                    <span class="message"><?php echo $line[3]; ?></span>
                     <span class="time"><img src="images/clock.png"><small> <?php echo $line[0]; ?> </small></span>
                   </a>
                 </li>

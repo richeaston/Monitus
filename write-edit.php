@@ -21,6 +21,6 @@ foreach ($lines as $key => $value) {
 	$logfile = "log.csv";
 	$date = date('d-m-Y H:i:s');
 	$content = file_get_contents($logfile);
-	file_put_contents($logfile, $date  . ",accept.png," . $_POST["servername"] . ",". $_POST["servername"] . " updated on the list: " . $_POST["type"] . "\n" . $content, LOCK_EX);
+	file_put_contents($logfile, $date  . ",information.png," . $_POST["servername"] . ",". $_POST["servername"] . " updated on the list: " . $_POST["type"] . "\n" . $content, LOCK_EX);
 	header( 'Location: assets.php' ) ;
 ?>
