@@ -25,6 +25,7 @@ color: whitesmoke;
 }
 
 .shadow {
+<<<<<<< HEAD
 /*box-shadow: 2px 2px 8px #0a0a0a;*/
 }
 
@@ -37,4 +38,11 @@ background: whitesmoke;
 border-radius: 4px;
 overflow: hidden;
 /*box-shadow: 1px 1px 6px #0a0a0a;*/
+=======
+box-shadow: 2px 2px 8px #0a0a0a;
+}
+
+.nav-shadow {
+box-shadow: 2px 2px 8px #0a0a0a;
+>>>>>>> d5ede6c77bef76f6a152fb0ee88fb0941d046a2d
 }

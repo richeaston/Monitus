@@ -12,7 +12,11 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 
 body {
   margin-top: 50px;
+<<<<<<< HEAD
   background-image: url('../images/grey_wash_wall/grey_wash_wall.png');
+=======
+  background-image: url('../images/crossword/crossword.png');
+>>>>>>> d5ede6c77bef76f6a152fb0ee88fb0941d046a2d
 }
 
 #wrapper {
@@ -111,15 +115,24 @@ table.tablesorter thead tr th:hover {
 	height: auto;
 	border-radius: 8px;
 	border: 0;
+<<<<<<< HEAD
 	background-color: #222222;
 	/*background: #45484d;
+=======
+	/*background-color: #222222;*/
+	background: #45484d;
+>>>>>>> d5ede6c77bef76f6a152fb0ee88fb0941d046a2d
 	background: -moz-linear-gradient(left,  #45484d 0%, #000000 100%);
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#45484d), color-stop(100%,#000000));
 	background: -webkit-linear-gradient(left,  #45484d 0%,#000000 100%);
 	background: -o-linear-gradient(left,  #45484d 0%,#000000 100%);
 	background: -ms-linear-gradient(left,  #45484d 0%,#000000 100%);
 	background: linear-gradient(to right,  #45484d 0%,#000000 100%);
+<<<<<<< HEAD
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 );*/
+=======
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 );
+>>>>>>> d5ede6c77bef76f6a152fb0ee88fb0941d046a2d
 	overflow-y: auto;
   }
 
