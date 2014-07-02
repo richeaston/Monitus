@@ -1,3 +1,22 @@
+.refresh-btn {
+background: rgb(252,234,187);
+background: -moz-linear-gradient(top,  rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,234,187,1)), color-stop(50%,rgba(252,205,77,1)), color-stop(51%,rgba(248,181,0,1)), color-stop(100%,rgba(251,223,147,1)));
+background: -webkit-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
+background: -o-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
+background: -ms-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
+background: linear-gradient(to bottom,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 );
+Font-weight: bold;
+border: 2px solid #0a0a0a;
+overflow: hidden;
+}
+
+
+.panel-bg {
+padding: 0px;
+}
+
 .row-valign {
 vertical-align: top;
 }
@@ -25,7 +44,7 @@ color: whitesmoke;
 }
 
 .shadow {
-/*box-shadow: 2px 2px 8px #0a0a0a;*/
+box-shadow: 2px 2px 8px #0a0a0a;
 }
 
 .nav-shadow {
@@ -38,3 +57,23 @@ border-radius: 4px;
 overflow: hidden;
 /*box-shadow: 1px 1px 6px #0a0a0a;*/
 }
+
+.slidein {
+animation:mymove 1s;
+-webkit-animation:mymove 1s; /* Safari and Chrome */
+}
+
+@keyframes mymove
+{
+0% {right:-600px;}
+50% {right:225px;}
+100% {right:0px;}
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+0% {right:-600px;}
+50% {right:225px;}
+100% {right:0px;}
+}
+  	

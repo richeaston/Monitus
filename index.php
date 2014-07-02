@@ -83,6 +83,7 @@
 		 
           <ul class="nav navbar-nav navbar-right navbar-user">
            <li><a href="#"><img src="images/clock.png"> Refresh in: <span id="countdown"></span></a></li>
+		   <!--
 		   <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/brick.png"> Menu <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -91,6 +92,7 @@
             	 <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
               </ul>
             </li>
+			-->
           </ul>
 
 		</div><!-- /.navbar-collapse -->
@@ -99,13 +101,13 @@
       <div id="page-wrapper">
 		<div class="row row-valign">
 			<div class="col-lg-4">
-			<div class="panel panel-default">
+			<div class="panel panel-default shadow">
               <div class="panel-heading">
                 <h3 class="panel-title">Servers</h3>
               </div>
-              <div class="panel-body">
+              <div class="panel-body panel-bg">
 				<div class="table-responsive">
-					<table class="table table-bordered table-hover table-condensed">
+					<table class="table table-condensed">
 					<thead>
 						<tr>
 							<th class="header">Server Name </th>
@@ -159,12 +161,12 @@
 					$smeh = round(($soffline / ($sonline+$soffline) * 100) , 0);
 					$p = (100 - $smeh);
 					?>
-						<tr><td colspan="2"><h4>Servers Online: <span class="label label-default"><?php echo $sonline; ?></span> of <span class="label label-default"><?php echo $total; ?></span></h4></td></tr>
+					</tbody> 
+						<tr><td colspan="2">Servers Online: <span class="label label-default"><?php echo $sonline; ?></span> of <span class="label label-default"><?php echo $total; ?></span></td></tr>
 					<?php
 					
 					fclose($handle);
 					?>
-					</tbody> 
 					</table>
 				</div>
               </div>
@@ -172,13 +174,13 @@
 			
 			</div>
 			<div class="col-lg-4">
-			<div class="panel panel-default">
+			<div class="panel panel-default shadow">
               <div class="panel-heading">
                 <h3 class="panel-title">Websites</h3>
               </div>
-              <div class="panel-body">
+              <div class="panel-body panel-bg">
 				<div class="table-responsive">
-					<table class="table table-bordered table-hover table-condensed">
+					<table class="table table-condensed">
 					<thead>
 						<tr>
 							<th class="header">Website Name </th>
@@ -239,13 +241,13 @@
               </div>
 			</div>
 			
-			<div class="panel panel-default">
+			<div class="panel panel-default shadow">
               <div class="panel-heading">
                 <h3 class="panel-title">Storage</h3>
               </div>
-              <div class="panel-body">
+              <div class="panel-body panel-bg">
 				<div class="table-responsive">
-					<table class="table table-bordered table-hover table-condensed">
+					<table class="table table-condensed">
 					<thead>
 						<tr>
 							<th class="header">Storage Name </th>
@@ -308,7 +310,7 @@
 		</div>
 		
 		<div class="col-lg-4">
-			<div class="panel panel-default">
+			<div class="panel panel-default shadow">
 				<div class="panel-heading">
 					<h3 class="panel-title">Service Status</h3>
 				</div>
@@ -343,16 +345,16 @@
 				</div>
 			</div>
 			
-			<div class="panel panel-danger">
+			<div class="panel panel-danger shadow">
               <div class="panel-heading">
                 <h3 class="panel-title"><img src="images/new.png"> <small>Alerts</small></h3>
               </div>
-                <?php
+               <?php
 				$file="log.csv";
 				readlog("$file");
 				?>
-              </div>
-       		<FORM><INPUT class="btn btn-warning" TYPE="button" onClick="history.go(0)" VALUE="Force Refresh"></FORM>
+       		</div>
+       		<FORM><INPUT class="btn refresh-btn shadow" TYPE="button" onClick="history.go(0)" VALUE="Force Refresh"></FORM>
 
 			</div>
 			
@@ -395,7 +397,7 @@ function readlog($file) {
 	$handle = fopen($file, "r");
 	$c = 0;
 	?>
-	<div class="panel-body">
+	<div class="panel-body panel-bg">
     <?php
 	if ($linecount > $offset) {
 		while($c<=($offset-1)){
@@ -441,7 +443,7 @@ function readlog($file) {
 <?php
  
 function getStatus($ip,$port){
-   $socket = @fsockopen($ip, $port, $errorNo, $errorStr, 2);
+   $socket = @fsockopen($ip, $port, $errorNo, $errorStr, 3);
    if(!$socket) return "offline";
      else return "online";
 }

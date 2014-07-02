@@ -46,7 +46,7 @@
             <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
             <li class="active"><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
            </ul>
-
+		<!--
           <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown messages-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/bell.png"> Alerts <b class="caret"></b></a>
@@ -64,10 +64,10 @@
                 <li><a href="remove-log.php"><img src="images/page_white_delete.png"> Clear Alert Log</a></li>
                 <li><a href="backup.php"><img src="images/page_white_zip.png"> Backup Settings and Assets</a></li>
                 <li class="divider"></li>
-                <!--<li><a href="#"><i class="icon-power-off"></i> Log Out</a></li>-->
+                <li><a href="#"><i class="icon-power-off"></i> Log Out</a></li>
               </ul>
             </li>
-          </ul>
+          </ul>-->
         </div><!-- /.navbar-collapse -->
       </nav>
 

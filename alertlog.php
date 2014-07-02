@@ -46,7 +46,7 @@
             <li class="active"><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
             <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
 			</ul>
-
+		<!--
           <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown messages-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/bell.png"> Alerts <b class="caret"></b></a>
@@ -66,6 +66,7 @@
               </ul>
             </li>
           </ul>
+		-->
         </div><!-- /.navbar-collapse -->
       </nav>
 
@@ -122,7 +123,7 @@ function fulllog($file) {
 	$handle = fopen($file, "r");
 	$c = 0;
 	?>
-	<div class="panel-body">
+	<div class="panel-body panel-bg">
     <?php
 		while(!feof($handle)){
 			$line = fgetcsv($handle, 0, ",");
