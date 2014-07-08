@@ -59,7 +59,7 @@
     <div id="wrapper">
 
       <!-- Sidebar -->
-      <nav class="navbar navbar-inverse navbar-fixed-top shadow" role="navigation">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -74,7 +74,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav side-nav nav-shadow">
+          <ul class="nav navbar-nav side-nav shadow">
             <li class="active"><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
             <li><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
             <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
@@ -468,7 +468,4 @@ function secondPassed() {
  
 var countdownTimer = setInterval('secondPassed()', 1000);
 </script>
-
-	</body>
-	
-</html>
+<?php include 'footer.php'; ?>

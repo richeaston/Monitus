@@ -281,5 +281,4 @@ function readlog($file) {
 }
 
 ?>
- </body>
-</html>
+<?php include 'footer.php'; ?>
