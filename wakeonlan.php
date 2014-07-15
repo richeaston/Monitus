@@ -43,62 +43,51 @@
           <ul class="nav navbar-nav side-nav shadow">
             <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
             <li><a href="assets.php"><img src="images/Computer.png"> Assets</a></li>
-            <li class="active"><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
-            <li class="disabled"><a href="Wakeonlan.php"><img src="images/bell.png"> Wake On Lan</a></li>
-		    <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
-		</ul>
-		<!--
-          <ul class="nav navbar-nav navbar-right navbar-user">
-            <li class="dropdown messages-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/bell.png"> Alerts <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <?php
-					$file="log.csv";
-					readlog("$file");
-				?>
-              </ul>
-            </li>
-			<li class="dropdown user-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/brick.png"> Tasks <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="add-device.php"><img src="images/computer_add.png"> Add Asset</a></li>
-                <li><a href="remove-log.php"><img src="images/page_white_delete.png"> Clear Alert Log</a></li>
-                <li class="divider"></li>
-              </ul>
-            </li>
-          </ul>
-		-->
-        </div><!-- /.navbar-collapse -->
+            <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
+            <li class="active"><a href="Wakeonlan.php"><img src="images/bell.png"> Wake On Lan</a></li>
+		    <li ><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
+           </ul>
+		</div><!-- /.navbar-collapse -->
       </nav>
 
       <div id="page-wrapper">
-
+		<form method="post" action="write-settings.php">
         <div class="row">
 			<div class="col-lg-12">
-            <ol class="breadcrumb">
-              <li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
-              <li class="active"><img src="images/book_open.png">  Alert Log</li>
-            </ol>
-			<a href="remove-log.php" class="btn btn-danger"><img src="images/page_white_delete.png"> Clear Alert Log</a>
-		</br>
-		</br>
-			<div class="panel panel-danger">
-              <div class="panel-heading">
-                <h3 class="panel-title">Current Alert Log</h3>
-              </div>
-              <?php
-			  $file = "log.csv";
-			  fulllog("$file");
-			  ?>
-            </div>
-
-		
-		</div>
-			
-		
-			
-			
-        </div><!-- /.row -->
+				<ol class="breadcrumb">
+					<li><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
+					<li class="active"><img src="images/bell.png">  Wake On Lan</li>
+				</ol>
+			</div>
+			<div class="col-lg-4">		
+					<div class="panel panel-default ">
+						<div class="panel-heading">
+							<h3 class="panel-title">Target</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label>Target Name</label>
+								<input class="form-control" id="tname" name="tname" placeholder="120" value="NONE">
+								<p class="help-block">Targets Name</p>
+							</div>
+							<div class="form-group">
+								<label>Target IP</label>
+								<input class="form-control" id="tip" name="tip" placeholder="" value="192.168.0.1">
+								<p class="help-block">IP Address</p>
+							</div>
+							<div class="form-group">
+								<label>Target IP</label>
+								<input class="form-control" id="tmac" name="tmac" placeholder="00-00-00-00-00-00" value="00-00-00-00-00-00">
+								<p class="help-block">MAC Address</p>
+							</div>
+							<a href="
+						</div>
+					</div>
+			</div>		
+			<div class="col-lg-4">		
+			</div>
+		  	</form>
+		</div><!-- /.row -->
 
       </div><!-- /#page-wrapper -->
 
@@ -107,49 +96,6 @@
     <!-- Bootstrap core JavaScript -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-<?php
-function fulllog($file) {
-	#count lines in log file
-	$handle = fopen($file, "r");
-	$linecount = 0;
-	while(!feof($handle)){
-		$line = fgets($handle, 4096);
-		$linecount++;
-	}
-	fclose($handle);
-	
-	
-	#read log file and create webpage entries.
-	$handle = fopen($file, "r");
-	$c = 0;
-	?>
-	<div class="panel-body panel-bg">
-    <?php
-		while(!feof($handle)){
-			$line = fgetcsv($handle, 0, ",");
-			if ($line[0] != "") {
-			?>	
-			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading"><img src="images/<?php echo $line[1]; ?>"><font color="red"> <?php echo $line[2]; ?></font></h4>
-				<p class="list-group-item-text"><?php echo $line[3]; ?><br/><img src="images/clock.png"><small> <?php echo $line[0]; ?></small></p>
-			</a>
-			<?php		
-			$c++;
-			}
-		}
-		?>
-		</div>
-		<?php
-		echo '<div class="panel-footer">Showing <span class="badge">' . $linecount . '</span> Alerts</div>';
-	
-	fclose($handle);
-}
-
-?>
-
-	
-	
-	
 <?php
 function readlog($file) {
 	#count lines in log file

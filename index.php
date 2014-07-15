@@ -78,7 +78,8 @@
             <li class="active"><a href="index.php"><img src="images/monitor.png"> Dashboard</a></li>
             <li><a href="assets.php"><img src="images/computer.png"> Assets</a></li>
             <li><a href="alertlog.php"><img src="images/book_open.png"> Alert Log</a></li>
-            <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
+        	<li class="disabled"><a href="Wakeonlan.php"><img src="images/bell.png"> Wake On Lan</a></li>
+		    <li><a href="settings.php"><img src="images/cog.png"> Settings</a></li>
 		 </ul>
 		 
           <ul class="nav navbar-nav navbar-right navbar-user">
